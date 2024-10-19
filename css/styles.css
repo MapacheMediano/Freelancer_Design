@@ -1,0 +1,285 @@
+    :root {                                                                                      /*Declaraciones de los colores de la pagina en hexadecimal*/
+        --blanco: #FFFFFF; 
+        --negro: #212121;
+        --primario: #ffc107;
+        --secundario: #0097a7;
+        --gris: #757575;
+        --grisclaro: #DFE9F3;
+        
+
+    }
+    
+    
+    /*Globales*/
+    html {                                                                                       /*Declaracion del tamaño de la fuente en porcentaje*/
+        font-size: 62.5%;
+        box-sizing: border-box;             /*hack para model*/
+        scroll-snap-type: y mandatory;
+    }
+    /*scroll snap*/
+    .servicios,
+    .navegacion-principal,
+    .formulario {
+        scroll-snap-align: center;              /*alineacion del scroll*/
+        scroll-snap-stop: always;               /*pausa de la alineacion del scroll*/
+    }
+    *, *:before, *:after {
+        box-sizing: inherit;
+      }
+
+    body{                                                                                        /*Detalles de la fuente que elegimos*/   
+        font-size: 16px;/* 1rem= 10px */
+        font-family: 'Krub', sans-serif;
+        background-image: linear-gradient(to top, var(--grisclaro) 0%, var(--blanco) 100% );
+    }
+    .titulo{                                                                                     /*Etiqueta de trabajo para el titulo*/
+
+        text-align: center;
+        font-size: 3.8rem; 
+    }
+    .contenedor {
+        max-width: 120rem;                                                                      /*ponemos max -width para que el contenedor que tiene la navegacion, siempre tome el maximo permitido y asi no afectar en el scroll de la pagina al adaptarse a dispoitivos*/
+        margin: 0 auto 0 auto;
+    }
+    .boton {
+        background-color: var(--secundario);
+        color: var(--blanco);
+        padding: 1rem 3rem;
+        margin-top: 1rem;
+        font-size: 2rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: bold;
+        border-radius: .5rem;
+        width: 90%;
+        text-align: center;
+        border: none;
+    }
+    @media (min-width: 768px) {
+        .boton{
+            width: auto;
+        }
+    }
+    .boton:hover {
+        cursor: pointer;
+    }
+    .sombra{
+        -webkit-box-shadow: 1px 1px 15px 1px rgba(99,99,99,0.43);
+        -moz-box-shadow: 1px 1px 15px 1px rgba(99,99,99,0.43);
+        box-shadow: 1px 1px 15px 1px rgba(99,99,99,0.43);
+        background-color: var(--blanco);
+        padding: 2rem;
+        border-radius: 1rem;
+    }
+    /* Tipografia */
+    h1  {
+        font-size: 3.8rem;
+
+    }
+    h2  {
+        font-size: 2.8rem;
+    }
+    h3  {
+        font-size: 1.8rem;
+    }
+    h1,h2,h3{
+        text-align: center;
+    }
+    /* Titulos */
+    .titulo span {                                                                              /*apartado que divide la palabra Freelancer del titulo*/
+        font-size: 2rem;
+    }
+    /* Utilidades */
+    .w-sm-100{                                                                                  /*utilidades las cuales cambian el tamaño del boton enviar*/
+        width: 100%;
+    }
+    @media (min-width: 768px) {
+        .w-sm-100{
+            width: auto;
+        }
+    }
+    .flex{
+        display: flex;
+    }
+    .alinear-derecha{
+        justify-content: flex-end;
+
+    }                                                                                          /*utilidades las cuales cambian el tamaño del boton enviar*/
+
+    /* Navegacion principal*/
+    .nav-bg{
+        background-color: var(--secundario);                                                    /*da color secundario a la barra de navegacion*/
+    }
+
+    .navegacion-principal  {
+      
+        display: flex;
+        flex-direction: column;
+       
+    }
+    @media (min-width: 768px) {                                                                 /*media queri para poder visualizar el sitio desde cualquier dispositivo*/
+        .navegacion-principal {
+            flex-direction: row;
+            justify-content: space-between;                                                     /*justifica el contenido de la navegacion el ancho de la pantalla*/
+        }
+        
+    }
+
+    .navegacion-principal a {
+        display: block;                                                                         /*genera un bloque de apartado para solo la barra de navegacion*/
+        text-align: center;                                                                     /*Gracias a la etiqueta anterior este align hace que al modificar el tamaño del display, el menu se centre*/
+        color: var(--blanco);                                                                   /*da color a las letras de la navegacion*/
+        text-decoration: none;                                                                  /**/
+        font-size: 2rem;        
+        font-weight: 700;
+        padding: 1rem;                                                                          /*padding es el espacio que queda entre cuadro y cuadro*/
+        
+        }
+        
+    .navegacion-principal a:hover{                                                              /*apartado para generar el sombreado del cuadro de eleccion*/
+        background-color: var(--primario);                                                      /*pone el cuadro de color principal*/
+        color: var(--negro);                                                                    /*al estar en color principal las letras cambiaran a color negro*/
+    }
+    
+/*-----------------------------------------------------------------------------------------*/
+
+.hero {
+    background-image: url(../img/hero.jpg);     /*etiqueta en css para añadir una imagen de fondo, para agregar la imagen es necesario poner bien la ruta de direccion de la misma*/
+    background-repeat: no-repeat;               /*sirve para que la imagen no se repita una vez finalizado el tamaño*/
+    background-size: cover;                     /*sirve para que la imagen cubra el espacio que tiene el display*/
+    height: 450px;                              /*medida de la imagen*/
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.contenido-hero{
+    position: absolute;
+    background-color: rgba(0,0,0, .7 ); /*anterior*/
+    background-color: rgb(0 0 0 / 70%); 
+    width: 100%;
+    height: 100%;
+
+    display: flex;                      /*alineas horizontalmente haciendo un flex*/
+    flex-direction: column;             /*al agregar el column haces que el flex aline verticalmente*/
+    align-items: center;                /*cuando se alinea verticalmente tienes que usar la etiqueta align-items*/
+    justify-content: center;            /*ahora alinea horizontalmente*/
+
+
+
+}
+
+.contenido-hero h2,
+.contenido-hero p{
+    color: var(--blanco);
+
+}
+.contenido-hero .ubicacion{
+    display: flex;
+    align-items: flex-end;
+}
+
+/*Servicios*/
+@media (min-width: 768px) {
+    .servicios {
+        display: grid;                          /*propiedades de css grid*/
+        grid-template-columns: repeat(3, 1fr);  /*33.33% 33.3% 33.3% se puede poner en porcentajes tambien*/
+        column-gap: 1rem;                              /*parecido a un margen*/
+    
+    }
+    
+}
+
+.servicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.servicio h3 {
+    color: var(--secundario);
+    font-weight: normal;
+
+}
+.servicio p{
+    line-height: 2;                             /*propiedad de inter lineado*/
+    text-align: center;
+}
+
+.servicio .iconos{
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--primario);
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+
+/*contacto*/
+
+.formulario {
+    background-color: var(--gris);
+    width: min( 60rem, 100%);                                   /*utiliza el valor mas pequeño*/
+    margin: 0 auto;                                             /*se utiliza siempre que sea un formalario siempre y cuento el padre no sea display flex*/
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.formulario fieldset {
+    border: none;
+}
+.formulario legend {
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--primario);
+}
+
+@media (min-width: 768px) {   
+.contenedor-campos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;                                  /*hara que se dividan en dos columnas con grid*/
+    grid-template-rows: auto auto 20rem;
+    column-gap: 1rem;                                                       /*le da espacio de 1 rem entre columnas*/ 
+    
+    }
+    .campo:nth-child(3),
+    .campo:nth-child(4) {                                           /*pseudo selector para apartar los campos en arreglos*/
+        grid-column: 1 / 3;                                         /*grid para mover la columna en el grid horizontal*/                                             
+        /*overflow: hidden;*/
+    }
+
+}
+
+.campo {
+    margin-bottom: 1rem;
+
+}
+
+.campo label {
+    color: var(--blanco);
+    font-weight: bold;
+    margin-bottom:  .5rem;
+    display: block;
+}
+.campo textarea {
+    height: 18rem;
+}
+
+
+.input-text {
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: .5rem;
+}
+
+/*footer*/
+
+.footer{
+    text-align: center;
+}
